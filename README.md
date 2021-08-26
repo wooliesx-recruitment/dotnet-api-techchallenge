@@ -12,7 +12,7 @@ There are multiple endpoints in the API which solves different challenges.
 ```
 {
   "name": "test", 
-  "token" : "1234-455662-22233333-3333"
+  "token" : "1234-455662-22433333-3333"
 }
 ```
 * Sort endpoint - This endpoint will need to accept a query string parameter called "sortOption" which will take in the following strings : 
