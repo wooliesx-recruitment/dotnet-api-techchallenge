@@ -4,7 +4,7 @@ This repository contains a solution to a tech challenge described in the below s
 
 ## Problem domain 
 
-This is designed to demostrate practical skills around building and hosting Web APIs. 
+This is designed to demonstrate practical skills around building and hosting Web APIs. 
 
 There are multiple endpoints in the API which solves different challenges. 
 
