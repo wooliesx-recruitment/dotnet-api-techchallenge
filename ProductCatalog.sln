@@ -1,8 +1,16 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProductCatalog.Api", "ProductCatalog.Api\ProductCatalog.Api.csproj", "{96F6D1FA-D8CC-4BE1-9A7A-ADE819F6050C}"
+# Visual Studio Version 17
+VisualStudioVersion = 17.10.35027.167
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ProductCatalog.Api", "ProductCatalog.Api\ProductCatalog.Api.csproj", "{96F6D1FA-D8CC-4BE1-9A7A-ADE819F6050C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProductCatalog.Tests", "ProductCatalog.Tests\ProductCatalog.Tests.csproj", "{3FCA59EC-17EC-49E2-99AC-B508DD7008DC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ProductCatalog.Tests", "ProductCatalog.Tests\ProductCatalog.Tests.csproj", "{3FCA59EC-17EC-49E2-99AC-B508DD7008DC}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{14666A6B-1853-47A8-9D17-AAAA7C457B42}"
+	ProjectSection(SolutionItems) = preProject
+		README.md = README.md
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -18,5 +26,11 @@ Global
 		{3FCA59EC-17EC-49E2-99AC-B508DD7008DC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3FCA59EC-17EC-49E2-99AC-B508DD7008DC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3FCA59EC-17EC-49E2-99AC-B508DD7008DC}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {61CCC888-95E6-440A-B8F7-96AFC17BE309}
 	EndGlobalSection
 EndGlobal
