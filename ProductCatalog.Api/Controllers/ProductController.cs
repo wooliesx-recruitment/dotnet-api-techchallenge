@@ -1,8 +1,8 @@
-using System.Collections.Generic;
-using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using ProductCatalog.Api.Domain.HttpClients;
 using ProductCatalog.Api.Domain.Product;
+using System.Collections.Generic;
+using System.Threading.Tasks;
 
 namespace ProductCatalog.Api.Controllers
 {
@@ -14,7 +14,7 @@ namespace ProductCatalog.Api.Controllers
         {
             var sortedProductQueryHandler =
                 new GetSortedProductQueryHandler(new ProductHttpClient(), new ShopperHistoryHttpClient());
-            
+
             var getSortedProductQuery = new GetSortedProductQuery(sortOption);
             var queryResponse = await sortedProductQueryHandler.Handle(getSortedProductQuery);
             return Ok(queryResponse.Products);

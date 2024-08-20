@@ -1,9 +1,9 @@
-using System;
 using Flurl;
 using Flurl.Http;
-using System.Threading.Tasks;
-using System.Collections.Generic;
 using ProductCatalog.Api.Domain.Product;
+using System;
+using System.Collections.Generic;
+using System.Threading.Tasks;
 
 namespace ProductCatalog.Api.Domain.HttpClients
 {

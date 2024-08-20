@@ -1,8 +1,8 @@
-using System;
 using Flurl;
 using Flurl.Http;
-using System.Threading.Tasks;
+using System;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 
 namespace ProductCatalog.Api.Domain.HttpClients
 {
@@ -13,7 +13,6 @@ namespace ProductCatalog.Api.Domain.HttpClients
 
     public class ProductHttpClient : IProductHttpClient
     {
-
         private readonly string _productUrl = "https://dev-wooliesx-recruitment.azurewebsites.net/api/resource/products";
 
         public async Task<IEnumerable<Product.Product>> GetProducts()

@@ -1,5 +1,5 @@
-using System.Collections.Generic;
 using ProductCatalog.Api.Domain.Product;
+using System.Collections.Generic;
 
 namespace ProductCatalog.Tests.DataHelpers
 {

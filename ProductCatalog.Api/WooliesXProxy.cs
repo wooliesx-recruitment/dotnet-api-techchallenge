@@ -1,10 +1,10 @@
+using Flurl;
+using Flurl.Http;
+using Microsoft.AspNetCore.Http;
 using System.IO;
 using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
-using Flurl;
-using Flurl.Http;
-using Microsoft.AspNetCore.Http;
 
 namespace ProductCatalog.Api
 {

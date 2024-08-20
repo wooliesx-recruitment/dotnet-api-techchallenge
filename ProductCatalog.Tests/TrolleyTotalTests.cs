@@ -1,10 +1,9 @@
-using Xunit;
-using System.Net.Http;
 using FluentAssertions;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc.Testing;
 using System.Net;
+using System.Net.Http;
+using System.Threading.Tasks;
+using Xunit;
 
 namespace ProductCatalog.Tests
 {

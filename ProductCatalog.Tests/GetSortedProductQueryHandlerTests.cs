@@ -1,9 +1,9 @@
-using Xunit;
 using FluentAssertions;
-using System.Threading.Tasks;
-using ProductCatalog.Tests.Stubs;
-using ProductCatalog.Tests.DataHelpers;
 using ProductCatalog.Api.Domain.Product;
+using ProductCatalog.Tests.DataHelpers;
+using ProductCatalog.Tests.Stubs;
+using System.Threading.Tasks;
+using Xunit;
 
 namespace ProductCatalog.Tests
 {
@@ -17,14 +17,13 @@ namespace ProductCatalog.Tests
             var getSortedProductQueryHandler = new GetSortedProductQueryHandler(
                 StubProductsHttpClient.WithEmptyProducts(),
                 StubShopperHistoryHttpClient.WithNoHistory());
-            
+
             // Act
             var getSortedProductQueryResponse = await getSortedProductQueryHandler.Handle(getSortedProductQuery);
-            
+
             // Assert
             getSortedProductQueryResponse.Products.Should().BeEmpty();
         }
-
 
         [Fact]
         public async Task ShouldReturnSortedFromLowToHigh()
@@ -34,14 +33,13 @@ namespace ProductCatalog.Tests
             var getSortedProductQueryHandler = new GetSortedProductQueryHandler(
                 StubProductsHttpClient.WithProducts(ListOfProduct.ANotSortedProductsFormLowToHigh),
                 StubShopperHistoryHttpClient.WithNoHistory());
-            
+
             // Act
             var getSortedProductQueryResponse = await getSortedProductQueryHandler.Handle(getSortedProductQuery);
-            
+
             // Assert
             getSortedProductQueryResponse.Products.Should().Equal(ListOfProduct.SortedProductsFormLowToHigh);
         }
-
 
         [Fact]
         public async Task ShouldReturnSortedFromHighToLow()
@@ -58,7 +56,7 @@ namespace ProductCatalog.Tests
             // Assert
             getSortedProductQueryResponse.Products.Should().Equal(ListOfProduct.SortedProductsFormHighToLow);
         }
-        
+
         [Fact]
         public async Task ShouldReturnSortedAscending()
         {
@@ -74,14 +72,14 @@ namespace ProductCatalog.Tests
             // Assert
             getSortedProductQueryResponse.Products.Should().Equal(ListOfProduct.SortedAscending);
         }
-        
+
         [Fact]
         public async Task ShouldReturnSortedDescending()
         {
             // Arrange
             var getSortedProductQuery = new GetSortedProductQuery("Descending");
             var getSortedProductQueryHandler = new GetSortedProductQueryHandler(
-                StubProductsHttpClient.WithProducts(ListOfProduct.ANotSortedProductsFormLowToHigh), 
+                StubProductsHttpClient.WithProducts(ListOfProduct.ANotSortedProductsFormLowToHigh),
                 StubShopperHistoryHttpClient.WithNoHistory());
 
             // Act
@@ -90,7 +88,7 @@ namespace ProductCatalog.Tests
             // Assert
             getSortedProductQueryResponse.Products.Should().Equal(ListOfProduct.SortedDescending);
         }
-        
+
         [Fact]
         public async Task ShouldReturnSortedRecommended()
         {

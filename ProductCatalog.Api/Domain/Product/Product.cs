@@ -1,12 +1,14 @@
-using System.Collections.Generic;
 using Newtonsoft.Json;
+using System.Collections.Generic;
 
 namespace ProductCatalog.Api.Domain.Product
 {
     public class Product : ValueObject
     {
         [JsonProperty] public string Name { get; }
+
         [JsonProperty] public double Price { get; }
+
         [JsonProperty] public double Quantity { get; }
 
         public Product(string name, double price, double quantity)
