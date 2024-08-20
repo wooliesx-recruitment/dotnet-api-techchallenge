@@ -15,7 +15,7 @@ namespace ProductCatalog.Api.Domain.HttpClients
     public class ShopperHistoryHttpClient : IShopperHistoryHttpClient
     {
         private readonly string _shopperOrdersUrl =
-            "http://dev-wooliesx-recruitment.azurewebsites.net/api/resource/shopperHistory";
+            "https://dev-wooliesx-recruitment.azurewebsites.net/api/resource/shopperHistory";
 
         public async Task<IEnumerable<ShopperHistory>> GetShopperHistory()
         {
@@ -23,9 +23,9 @@ namespace ProductCatalog.Api.Domain.HttpClients
             {
                 var shopperHistories = await _shopperOrdersUrl
                     .SetQueryParam("token", "25a4f06f-8fd5-49b3-a711-c013c156f8c8")
-                    .AllowAnyHttpStatus()
                     .WithHeader("Accept", "application/json")
                     .GetJsonAsync<List<ShopperHistory>>();
+
                 return shopperHistories;
             }
             catch (Exception e)

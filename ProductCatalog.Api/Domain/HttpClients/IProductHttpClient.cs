@@ -14,7 +14,7 @@ namespace ProductCatalog.Api.Domain.HttpClients
     public class ProductHttpClient : IProductHttpClient
     {
 
-        private readonly string _productUrl = "http://dev-wooliesx-recruitment.azurewebsites.net/api/resource/products";
+        private readonly string _productUrl = "https://dev-wooliesx-recruitment.azurewebsites.net/api/resource/products";
 
         public async Task<IEnumerable<Product.Product>> GetProducts()
         {
@@ -22,9 +22,9 @@ namespace ProductCatalog.Api.Domain.HttpClients
             {
                 var products = await _productUrl
                     .SetQueryParam("token", "25a4f06f-8fd5-49b3-a711-c013c156f8c8")
-                    .AllowAnyHttpStatus()
                     .WithHeader("Accept", "application/json")
                     .GetJsonAsync<Product.Product[]>();
+
                 return products;
             }
             catch (Exception e)
