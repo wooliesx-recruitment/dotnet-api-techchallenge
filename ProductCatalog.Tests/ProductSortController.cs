@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Http;
 using ProductCatalog.Tests.DataHelpers;
 using Microsoft.AspNetCore.Mvc.Testing;
 using ProductCatalog.Api.Domain.Product;
+using System.Net;
 
 namespace ProductCatalog.Tests
 {
@@ -22,7 +23,7 @@ namespace ProductCatalog.Tests
             var httpResponseMessage = await httpClient.GetAsync("/sort?sortOption=High");
             
             // Assert
-            httpResponseMessage.StatusCode.Should().Be(StatusCodes.Status200OK);
+            httpResponseMessage.StatusCode.Should().Be(HttpStatusCode.OK);
             var readAsStringAsync = await httpResponseMessage.Content.ReadAsStringAsync();
             var products = JsonConvert.DeserializeObject<Product[]>(readAsStringAsync);
             products.Should().Equal(ListOfProduct.SortedProductsFormHighToLow);
@@ -38,7 +39,7 @@ namespace ProductCatalog.Tests
             var httpResponseMessage = await httpClient.GetAsync("/sort?sortOption=Recommended");
             
             // Assert
-            httpResponseMessage.StatusCode.Should().Be(StatusCodes.Status200OK);
+            httpResponseMessage.StatusCode.Should().Be(HttpStatusCode.OK);
             var readAsStringAsync = await httpResponseMessage.Content.ReadAsStringAsync();
             var products = JsonConvert.DeserializeObject<Product[]>(readAsStringAsync);
             products.Should().Equal(ListOfProduct.SortedBasedOnRecommended);

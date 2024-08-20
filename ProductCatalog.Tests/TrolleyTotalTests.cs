@@ -4,6 +4,7 @@ using FluentAssertions;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc.Testing;
+using System.Net;
 
 namespace ProductCatalog.Tests
 {
@@ -29,7 +30,7 @@ namespace ProductCatalog.Tests
             var httpResponseMessage = await httpClient.PostAsync("/trolleyTotal", new StringContent(requestContent));
 
             // Assert
-            httpResponseMessage.StatusCode.Should().Be(StatusCodes.Status200OK);
+            httpResponseMessage.StatusCode.Should().Be(HttpStatusCode.OK);
             var readAsStringAsync = await httpResponseMessage.Content.ReadAsStringAsync();
             readAsStringAsync.Should().Be("150.0");
         }

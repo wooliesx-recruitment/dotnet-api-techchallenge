@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Http;
 using ProductCatalog.Api.Controllers;
 using Microsoft.AspNetCore.Mvc.Testing;
+using System.Net;
 
 namespace ProductCatalog.Tests
 {
@@ -35,7 +36,7 @@ namespace ProductCatalog.Tests
             var httpResponseMessage = await httpClient.GetAsync("/user");
 
             // Assert
-            httpResponseMessage.StatusCode.Should().Be(StatusCodes.Status200OK);
+            httpResponseMessage.StatusCode.Should().Be(HttpStatusCode.OK);
             var readAsStringAsync = await httpResponseMessage.Content.ReadAsStringAsync();
             var userResponseModel = JsonConvert.DeserializeObject<UserResponseModel>(readAsStringAsync);
             userResponseModel.Name.Should().Be("John Smith");
