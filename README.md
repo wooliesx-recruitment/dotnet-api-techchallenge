@@ -18,9 +18,9 @@ There are multiple endpoints in the API which solves different challenges.
 * Sort endpoint - This endpoint will need to accept a query string parameter called "sortOption" which will take in the following strings : 
   - "Low" - Low to High Price
   - "High" - High to Low Price
-  - Ascending" - A - Z sort on the Name
-  - Descending" - Z - A sort on the Name
-  - Recommended" - this will call the "shopperHistory" resource to get a list of customers orders and needs to return based on popularity,
+  - "Ascending" - A - Z sort on the Name
+  - "Descending" - Z - A sort on the Name
+  - "Recommended" - this will call the "shopperHistory" resource to get a list of customers orders and needs to return based on popularity,
 
 It needs to call the "products" resource to get a list of available products. 
 Response will be in the same data structure as the "products" response (only sorted correctly). 
